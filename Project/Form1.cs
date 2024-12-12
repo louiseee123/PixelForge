@@ -16,61 +16,47 @@ namespace Project
             string mysqlCon = "server=localhost;user=root;database=pixelforge;password=";
             MySqlConnection mySqlConnection = new MySqlConnection(mysqlCon);
 
-            string username = textuser.Text.ToString();
-            string password = maskedpassword.Text.ToString();
+            string email = textuser.Text;
+            string password = maskedpassword.Text;
 
-            if (String.IsNullOrEmpty(username) || String.IsNullOrEmpty(password))
+            if (String.IsNullOrEmpty(email) || String.IsNullOrEmpty(password))
             {
-                MessageBox.Show("Please fill in the fields");
+                MessageBox.Show("Please enter both email and password.");
                 return;
             }
 
             try
             {
                 mySqlConnection.Open();
-                MySqlCommand mySqlCommand = new MySqlCommand("SELECT * FROM user WHERE email = @Email AND password = @Password", mySqlConnection);
-                mySqlCommand.Parameters.AddWithValue("@Email", username);
+
+                string query = "SELECT firstname FROM user WHERE email = @Email AND password = @Password";
+                MySqlCommand mySqlCommand = new MySqlCommand(query, mySqlConnection);
+                mySqlCommand.Parameters.AddWithValue("@Email", email);
                 mySqlCommand.Parameters.AddWithValue("@Password", password);
 
-                MySqlDataReader reader = mySqlCommand.ExecuteReader();
+                object result = mySqlCommand.ExecuteScalar();
 
-                // Use a boolean flag to track if login is successful
-                bool loginSuccessful = false;
-
-                if (reader.Read())
+                if (result != null)
                 {
-                    // If a record is found, the credentials are correct
-                    loginSuccessful = true;
-                }
+                    string firstName = result.ToString();
 
-                reader.Close();
-                mySqlConnection.Close();
-
-                // Check the login status
-                if (loginSuccessful)
-                {
-                    MessageBox.Show("Login Successful");
-                    Dashboard dashboard = new Dashboard();
+                    // Pass the first name to the Dashboard
+                    Dashboard dashboard = new Dashboard(firstName);
                     dashboard.Show();
                     this.Hide();
                 }
                 else
                 {
-                    MessageBox.Show("Invalid Login, Please try again");
+                    MessageBox.Show("Invalid email or password.");
                 }
             }
             catch (Exception ex)
             {
-                // Handle any errors
-                MessageBox.Show("An error occurred: " + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
             }
             finally
             {
-                // Ensure the connection is closed
-                if (mySqlConnection.State == System.Data.ConnectionState.Open)
-                {
-                    mySqlConnection.Close();
-                }
+                mySqlConnection.Close();
             }
         }
 

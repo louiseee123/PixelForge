@@ -65,7 +65,7 @@
             panel1.Controls.Add(label1);
             panel1.Controls.Add(login);
             panel1.Controls.Add(textuser);
-            panel1.ForeColor = Color.Black;
+            panel1.ForeColor = Color.FromArgb(64, 64, 64);
             panel1.Location = new Point(294, 12);
             panel1.Name = "panel1";
             panel1.Size = new Size(494, 426);
@@ -75,7 +75,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Arial Rounded MT Bold", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.Yellow;
+            label4.ForeColor = Color.DodgerBlue;
             label4.Location = new Point(131, 107);
             label4.Name = "label4";
             label4.Size = new Size(247, 37);
@@ -125,6 +125,7 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.ForeColor = Color.FromArgb(64, 64, 64);
             label1.Location = new Point(221, 191);
             label1.Name = "label1";
             label1.Size = new Size(60, 15);
@@ -135,6 +136,7 @@
             // 
             login.BackColor = SystemColors.Control;
             login.Cursor = Cursors.Hand;
+            login.ForeColor = Color.FromArgb(64, 64, 64);
             login.Location = new Point(208, 303);
             login.Name = "login";
             login.Size = new Size(88, 31);
@@ -200,7 +202,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.DodgerBlue;
+            label5.ForeColor = Color.DarkSlateGray;
             label5.Location = new Point(34, 218);
             label5.Name = "label5";
             label5.Size = new Size(205, 15);
@@ -211,7 +213,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Arial Rounded MT Bold", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.ForeColor = Color.SteelBlue;
+            label8.ForeColor = Color.DodgerBlue;
             label8.Location = new Point(47, 180);
             label8.Name = "label8";
             label8.Size = new Size(183, 37);

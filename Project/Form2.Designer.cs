@@ -82,6 +82,7 @@
             panel1.Controls.Add(fnametb);
             panel1.Controls.Add(register);
             panel1.Controls.Add(emailtb);
+            panel1.ForeColor = Color.FromArgb(64, 64, 64);
             panel1.Location = new Point(302, 12);
             panel1.Name = "panel1";
             panel1.Size = new Size(486, 426);
@@ -91,7 +92,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Arial Rounded MT Bold", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.ForeColor = Color.Yellow;
+            label7.ForeColor = Color.DodgerBlue;
             label7.Location = new Point(170, 7);
             label7.Name = "label7";
             label7.Size = new Size(149, 37);
@@ -281,7 +282,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Arial Rounded MT Bold", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.ForeColor = Color.SteelBlue;
+            label8.ForeColor = Color.DodgerBlue;
             label8.Location = new Point(63, 189);
             label8.Name = "label8";
             label8.Size = new Size(183, 37);
@@ -292,7 +293,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.ForeColor = Color.DodgerBlue;
+            label9.ForeColor = Color.FromArgb(64, 64, 64);
             label9.Location = new Point(52, 228);
             label9.Name = "label9";
             label9.Size = new Size(205, 15);
