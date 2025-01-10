@@ -40,7 +40,9 @@
             panel2 = new Panel();
             label4 = new Label();
             panel3 = new Panel();
+            label6 = new Label();
             transacbut = new Button();
+            paytext = new TextBox();
             price = new Label();
             label5 = new Label();
             label3 = new Label();
@@ -69,19 +71,20 @@
             // 
             // managebut
             // 
-            managebut.Location = new Point(78, 400);
+            managebut.Location = new Point(74, 235);
             managebut.Name = "managebut";
             managebut.Size = new Size(75, 23);
             managebut.TabIndex = 5;
             managebut.Text = "Manage";
             managebut.UseVisualStyleBackColor = true;
+            managebut.Click += managebut_Click;
             // 
             // name
             // 
             name.AutoSize = true;
             name.Font = new Font("Arial Rounded MT Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             name.ForeColor = Color.DodgerBlue;
-            name.Location = new Point(54, 210);
+            name.Location = new Point(56, 197);
             name.Name = "name";
             name.Size = new Size(112, 22);
             name.TabIndex = 3;
@@ -158,17 +161,28 @@
             // panel3
             // 
             panel3.BorderStyle = BorderStyle.Fixed3D;
+            panel3.Controls.Add(label6);
             panel3.Controls.Add(transacbut);
+            panel3.Controls.Add(paytext);
             panel3.Controls.Add(price);
             panel3.Controls.Add(label5);
-            panel3.Location = new Point(12, 410);
+            panel3.Location = new Point(12, 384);
             panel3.Name = "panel3";
-            panel3.Size = new Size(631, 39);
+            panel3.Size = new Size(631, 65);
             panel3.TabIndex = 18;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(309, 7);
+            label6.Name = "label6";
+            label6.Size = new Size(131, 15);
+            label6.TabIndex = 16;
+            label6.Text = "Enter Payment Amount";
             // 
             // transacbut
             // 
-            transacbut.Location = new Point(549, 7);
+            transacbut.Location = new Point(524, 29);
             transacbut.Name = "transacbut";
             transacbut.Size = new Size(75, 23);
             transacbut.TabIndex = 4;
@@ -176,12 +190,20 @@
             transacbut.UseVisualStyleBackColor = true;
             transacbut.Click += transacbut_Click;
             // 
+            // paytext
+            // 
+            paytext.Location = new Point(308, 29);
+            paytext.Name = "paytext";
+            paytext.Size = new Size(210, 23);
+            paytext.TabIndex = 11;
+            // 
             // price
             // 
             price.AutoSize = true;
-            price.Location = new Point(111, 13);
+            price.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            price.Location = new Point(99, 21);
             price.Name = "price";
-            price.Size = new Size(28, 15);
+            price.Size = new Size(40, 21);
             price.TabIndex = 0;
             price.Text = "0.00";
             // 
@@ -189,7 +211,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(14, 7);
+            label5.Location = new Point(14, 21);
             label5.Name = "label5";
             label5.Size = new Size(53, 21);
             label5.TabIndex = 3;
@@ -209,7 +231,7 @@
             panel4.Controls.Add(list);
             panel4.Location = new Point(12, 90);
             panel4.Name = "panel4";
-            panel4.Size = new Size(631, 314);
+            panel4.Size = new Size(631, 288);
             panel4.TabIndex = 20;
             // 
             // list
@@ -266,5 +288,7 @@
         private Label price;
         private Button transacbut;
         private Label label5;
+        private TextBox paytext;
+        private Label label6;
     }
 }

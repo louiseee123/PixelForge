@@ -14,13 +14,15 @@ namespace Project
     public partial class Dashboard : Form
     {
         private string firstName;
+        private string lastName;
         private int labelYPosition = 100;
         private Label totalPriceLabel;
         private decimal total = 0;
-        public Dashboard(string firstName)
+        public Dashboard(string firstName, string lastName)
         {
             InitializeComponent();
             this.firstName = firstName;
+            this.lastName = lastName;
             InitializeTotalPriceLabel();
 
 
@@ -30,10 +32,21 @@ namespace Project
         private void Dashboard_Load(object sender, EventArgs e)
         {
             // Display the welcome message when the form loads
-            name.Text = firstName;
+            name.Text = $"{firstName} {lastName}";
 
 
         }
+        private void ResetTransaction()
+        {
+            total = 0;  // Reset the total amount
+            totalPriceLabel.Text = "₱0.00";  // Reset the total price label
+            list.Text = "";  // Clear the product list
+            paytext.Text = "";  // Clear the payment field
+            price.Text = "₱0.00";
+            prodtext.Text = "";
+
+        }
+
         private void UpdateTotalPrice(decimal price)
         {
             if (totalPriceLabel == null)
@@ -115,7 +128,7 @@ namespace Project
 
                     // Update the total price
                     total += productPrice;
-                    price.Text = $"Total: ₱{total:F2}";
+                    price.Text = $"₱{total:F2}";
 
 
                     {
@@ -151,10 +164,55 @@ namespace Project
         private void transacbut_Click(object sender, EventArgs e)
         {
 
-            transaction transform = new transaction();
-            transform.TotalAmount = total;
-            transform.Show();
-            
+            // Ensure the customer entered a payment amount
+            if (string.IsNullOrEmpty(paytext.Text))
+            {
+                MessageBox.Show("Please enter the payment amount.");
+                return;
+            }
+
+            // Parse the payment amount
+            if (!decimal.TryParse(paytext.Text, out decimal payment))
+            {
+                MessageBox.Show("Please enter a valid payment amount.");
+                return;
+            }
+
+            // Check if the payment is sufficient
+            if (payment < total)
+            {
+                MessageBox.Show("Insufficient payment. Please collect the full amount.");
+                return;
+            }
+
+            // Calculate the change
+            decimal change = payment - total;
+
+            // Prepare the makeshift receipt
+            StringBuilder receipt = new StringBuilder();
+            receipt.AppendLine("------------ Receipt ------------");
+            receipt.AppendLine($"Cashier: {firstName}");
+            receipt.AppendLine("\nProducts Purchased:");
+            receipt.AppendLine(list.Text); // This will display the product list from the `list.Text` label
+            receipt.AppendLine($"Total: ₱{total:F2}");
+            receipt.AppendLine($"Payment: ₱{payment:F2}");
+            receipt.AppendLine($"Change: ₱{change:F2}");
+            receipt.AppendLine("---------------------------------");
+
+            // Display the receipt in a MessageBox
+            MessageBox.Show(receipt.ToString(), "Transaction Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // Optionally, reset the form for the next transaction
+            ResetTransaction();
+        }
+
+        private void managebut_Click(object sender, EventArgs e)
+        {
+
+           manage manform = new manage(firstName, lastName);
+            manform.Show();
+            this.Hide();
+
         }
     }
 }

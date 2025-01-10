@@ -29,7 +29,7 @@ namespace Project
             {
                 mySqlConnection.Open();
 
-                string query = "SELECT firstname FROM user WHERE email = @Email AND password = @Password";
+                string query = "SELECT firstname, lastname FROM user WHERE email = @Email AND password = @Password";
                 MySqlCommand mySqlCommand = new MySqlCommand(query, mySqlConnection);
                 mySqlCommand.Parameters.AddWithValue("@Email", email);
                 mySqlCommand.Parameters.AddWithValue("@Password", password);
@@ -39,9 +39,10 @@ namespace Project
                 if (result != null)
                 {
                     string firstName = result.ToString();
+                    string lastName = result.ToString();
 
                     // Pass the first name to the Dashboard
-                    Dashboard dashboard = new Dashboard(firstName);
+                    Dashboard dashboard = new Dashboard(firstName, lastName);
                     dashboard.Show();
                     this.Hide();
                 }
