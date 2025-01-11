@@ -23,16 +23,23 @@ namespace Project
             InitializeComponent();
             this.firstName = firstName;
             this.lastName = lastName;
-            
 
-          
+
+
         }
         private void manage_Load(object sender, EventArgs e)
         {
-            
-          welcometext.Text = firstName;
+
+            welcometext.Text = firstName;
 
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            history hist = new history();
+            hist.Show();
+            this.Hide();
         }
     }
 

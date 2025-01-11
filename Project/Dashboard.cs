@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-    
+
 namespace Project
 {
     public partial class Dashboard : Form
@@ -32,7 +32,7 @@ namespace Project
         private void Dashboard_Load(object sender, EventArgs e)
         {
             // Display the welcome message when the form loads
-            name.Text = $"{firstName} {lastName}";
+            name.Text =firstName;
 
 
         }
@@ -78,6 +78,7 @@ namespace Project
             // Add the total price label to the form
             this.Controls.Add(totalPriceLabel);
         }
+
 
 
 
@@ -190,29 +191,70 @@ namespace Project
 
             // Prepare the makeshift receipt
             StringBuilder receipt = new StringBuilder();
-            receipt.AppendLine("------------ Receipt ------------");
+
+            receipt.AppendLine("--------------- PixelForge ---------------");
             receipt.AppendLine($"Cashier: {firstName}");
             receipt.AppendLine("\nProducts Purchased:");
             receipt.AppendLine(list.Text); // This will display the product list from the `list.Text` label
             receipt.AppendLine($"Total: ₱{total:F2}");
             receipt.AppendLine($"Payment: ₱{payment:F2}");
             receipt.AppendLine($"Change: ₱{change:F2}");
-            receipt.AppendLine("---------------------------------");
+            receipt.AppendLine("------------------------------------------");
 
-            // Display the receipt in a MessageBox
             MessageBox.Show(receipt.ToString(), "Transaction Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            // Optionally, reset the form for the next transaction
+            
+            RecordTransaction(receipt.ToString());
+           
             ResetTransaction();
         }
+
 
         private void managebut_Click(object sender, EventArgs e)
         {
 
-           manage manform = new manage(firstName, lastName);
+            manage manform = new manage(firstName, lastName);
             manform.Show();
             this.Hide();
 
+        }
+        private void RecordTransaction(string receiptDetails)
+        {
+            string mysqlCon = "server=localhost;user=root;database=pixelforge;password=";
+            MySqlConnection mySqlConnection = new MySqlConnection(mysqlCon);
+
+            try
+            {
+                mySqlConnection.Open();
+
+                // Generate a unique transaction ID (you can customize this logic as needed)
+                Guid transactionId = Guid.NewGuid();
+                string tid = transactionId.ToString();
+
+                // Get the current date and time
+                DateTime transactionDateTime = DateTime.Now;
+
+                // SQL query to insert the transaction record
+                string query = "INSERT INTO transaction (tid, date, receipt) VALUES (@TID, @DateTime, @Receipt)";
+                MySqlCommand mySqlCommand = new MySqlCommand(query, mySqlConnection);
+
+                // Add parameters for the query
+                mySqlCommand.Parameters.AddWithValue("@TID", tid);
+                mySqlCommand.Parameters.AddWithValue("@DateTime", transactionDateTime);
+                mySqlCommand.Parameters.AddWithValue("@Receipt", receiptDetails);
+
+                // Execute the query
+                mySqlCommand.ExecuteNonQuery();
+
+                MessageBox.Show("Transaction recorded successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error recording transaction: " + ex.Message);
+            }
+            finally
+            {
+                mySqlConnection.Close();
+            }
         }
     }
 }

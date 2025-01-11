@@ -57,6 +57,7 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.InactiveCaption;
+            panel1.BorderStyle = BorderStyle.Fixed3D;
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(maskedpassword);
@@ -157,6 +158,7 @@
             // panel2
             // 
             panel2.BackColor = SystemColors.MenuBar;
+            panel2.BorderStyle = BorderStyle.Fixed3D;
             panel2.Controls.Add(pictureBox4);
             panel2.Controls.Add(pictureBox5);
             panel2.Controls.Add(pictureBox3);
@@ -224,6 +226,7 @@
             // 
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.BorderStyle = BorderStyle.Fixed3D;
             pictureBox1.Location = new Point(63, 57);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(147, 120);

@@ -57,7 +57,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = SystemColors.ControlLight;
+            panel1.BackColor = SystemColors.ScrollBar;
             panel1.BorderStyle = BorderStyle.Fixed3D;
             panel1.Controls.Add(managebut);
             panel1.Controls.Add(name);
@@ -71,6 +71,7 @@
             // 
             // managebut
             // 
+            managebut.Cursor = Cursors.Hand;
             managebut.Location = new Point(74, 235);
             managebut.Name = "managebut";
             managebut.Size = new Size(75, 23);
@@ -115,6 +116,7 @@
             // 
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.BorderStyle = BorderStyle.Fixed3D;
             pictureBox1.Location = new Point(19, 13);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(188, 154);
@@ -123,6 +125,7 @@
             // 
             // button1
             // 
+            button1.Cursor = Cursors.Hand;
             button1.Location = new Point(230, 36);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
@@ -133,6 +136,7 @@
             // 
             // prodtext
             // 
+            prodtext.Cursor = Cursors.IBeam;
             prodtext.Location = new Point(14, 37);
             prodtext.Name = "prodtext";
             prodtext.Size = new Size(210, 23);
@@ -182,6 +186,7 @@
             // 
             // transacbut
             // 
+            transacbut.Cursor = Cursors.Hand;
             transacbut.Location = new Point(524, 29);
             transacbut.Name = "transacbut";
             transacbut.Size = new Size(75, 23);
@@ -192,6 +197,7 @@
             // 
             // paytext
             // 
+            paytext.Cursor = Cursors.IBeam;
             paytext.Location = new Point(308, 29);
             paytext.Name = "paytext";
             paytext.Size = new Size(210, 23);
@@ -227,6 +233,8 @@
             // 
             // panel4
             // 
+            panel4.AutoScroll = true;
+            panel4.BackColor = SystemColors.ControlLight;
             panel4.BorderStyle = BorderStyle.Fixed3D;
             panel4.Controls.Add(list);
             panel4.Location = new Point(12, 90);
@@ -247,13 +255,16 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             ClientSize = new Size(884, 461);
             Controls.Add(panel4);
             Controls.Add(label3);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            DoubleBuffered = true;
             Name = "Dashboard";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Dashboard";
             Load += Dashboard_Load;
             panel1.ResumeLayout(false);
