@@ -188,18 +188,19 @@ namespace Project
 
             // Calculate the change
             decimal change = payment - total;
-
+            string formattedDateTime = DateTime.Now.ToString("MMMM dd, yyyy hh:mm tt");
             // Prepare the makeshift receipt
             StringBuilder receipt = new StringBuilder();
 
-            receipt.AppendLine("--------------- PixelForge ---------------");
+            receipt.AppendLine("----------------------- PixelForge -----------------------\n\n");
             receipt.AppendLine($"Cashier: {firstName}");
-            receipt.AppendLine("\nProducts Purchased:");
+            receipt.AppendLine($"Date: {formattedDateTime}");
+            receipt.AppendLine("\nProducts Purchased:\n");
             receipt.AppendLine(list.Text); // This will display the product list from the `list.Text` label
             receipt.AppendLine($"Total: ₱{total:F2}");
             receipt.AppendLine($"Payment: ₱{payment:F2}");
             receipt.AppendLine($"Change: ₱{change:F2}");
-            receipt.AppendLine("------------------------------------------");
+            receipt.AppendLine("\n\n----------------------------------------------------------");
 
             MessageBox.Show(receipt.ToString(), "Transaction Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
             
@@ -226,19 +227,17 @@ namespace Project
             {
                 mySqlConnection.Open();
 
-                // Generate a unique transaction ID (you can customize this logic as needed)
-                Guid transactionId = Guid.NewGuid();
-                string tid = transactionId.ToString();
+                
 
                 // Get the current date and time
                 DateTime transactionDateTime = DateTime.Now;
 
                 // SQL query to insert the transaction record
-                string query = "INSERT INTO transaction (tid, date, receipt) VALUES (@TID, @DateTime, @Receipt)";
+                string query = "INSERT INTO transaction (date, receipt) VALUES (@DateTime, @Receipt)";
                 MySqlCommand mySqlCommand = new MySqlCommand(query, mySqlConnection);
 
                 // Add parameters for the query
-                mySqlCommand.Parameters.AddWithValue("@TID", tid);
+              
                 mySqlCommand.Parameters.AddWithValue("@DateTime", transactionDateTime);
                 mySqlCommand.Parameters.AddWithValue("@Receipt", receiptDetails);
 

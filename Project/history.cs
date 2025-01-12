@@ -8,13 +8,18 @@ namespace Project
 {
     public partial class history : Form
     {
+        private string firstName;
+        private string lastName;
         private string connectionString = "server=localhost;user=root;database=pixelforge;password=";
+        private ToolTip toolTip;
 
         public history()
         {
             InitializeComponent();
+           
             LoadTransactionHistory();
             listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged; // Attach event handler
+
         }
 
         private void LoadTransactionHistory()
@@ -34,7 +39,7 @@ namespace Project
                     while (reader.Read())
                     {
                         string transactionId = reader["tid"].ToString();
-                        string transactionDate = Convert.ToDateTime(reader["date"]).ToString("yyyy-MM-dd HH:mm:ss");
+                        string transactionDate = Convert.ToDateTime(reader["date"]).ToString("MMMM dd, yyyy hh:mm tt");
 
                         // Add the transaction ID as the value and the date as the display text
                         listBox1.Items.Add(new ListItem(transactionDate, transactionId));
@@ -79,10 +84,10 @@ namespace Project
                         {
                             // Construct the transaction details
                             string tid = reader["tid"].ToString();
-                            string date = Convert.ToDateTime(reader["date"]).ToString("yyyy-MM-dd HH:mm:ss");
+                            string date = Convert.ToDateTime(reader["date"]).ToString("MMMM dd, yyyy hh:mm tt");
                             string receipt = reader["receipt"].ToString();
 
-                            string details = $"Transaction ID: {tid}\nDate: {date}\nReceipt: {receipt}";
+                            string details = $"Transaction ID: {tid}\nDate: {date}\nReceipt:\n {receipt}";
                             MessageBox.Show(details, "Transaction Details", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
@@ -101,15 +106,18 @@ namespace Project
         private void history_Load(object sender, EventArgs e)
         {
             // Customize the ListBox for better appearance
-            listBox1.Font = new Font("Arial", 12);
+            listBox1.Font = new Font("Arial", 16);
             listBox1.ForeColor = Color.Black;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            history hist = new history();
-            hist.Show();
+            manage manform = new manage(firstName, lastName);
+            manform.Show();
             this.Hide();
+
+
+
         }
     }
 

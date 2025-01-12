@@ -30,26 +30,27 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(manage));
             panel1 = new Panel();
+            label5 = new Label();
+            label8 = new Label();
             label2 = new Label();
             welcometext = new Label();
             label1 = new Label();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
+            pictureBox5 = new PictureBox();
+            pictureBox4 = new PictureBox();
+            pictureBox3 = new PictureBox();
             button1 = new Button();
             button2 = new Button();
             panel3 = new Panel();
-            label8 = new Label();
-            label5 = new Label();
-            pictureBox3 = new PictureBox();
-            pictureBox4 = new PictureBox();
-            pictureBox5 = new PictureBox();
+            button3 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
-            panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -66,10 +67,32 @@
             panel1.Size = new Size(526, 326);
             panel1.TabIndex = 0;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.DarkSlateGray;
+            label5.Location = new Point(153, 44);
+            label5.Name = "label5";
+            label5.Size = new Size(205, 15);
+            label5.TabIndex = 11;
+            label5.Text = "The best Gaming Shop in town.";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Arial Rounded MT Bold", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.ForeColor = Color.DodgerBlue;
+            label8.Location = new Point(167, 6);
+            label8.Name = "label8";
+            label8.Size = new Size(183, 37);
+            label8.TabIndex = 10;
+            label8.Text = "PixelForge";
+            // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(112, 141);
+            label2.Location = new Point(116, 141);
             label2.Name = "label2";
             label2.Size = new Size(286, 15);
             label2.TabIndex = 6;
@@ -111,6 +134,7 @@
             // 
             panel2.BackColor = SystemColors.InactiveCaption;
             panel2.BorderStyle = BorderStyle.Fixed3D;
+            panel2.Controls.Add(button3);
             panel2.Controls.Add(pictureBox5);
             panel2.Controls.Add(pictureBox4);
             panel2.Controls.Add(pictureBox3);
@@ -120,12 +144,42 @@
             panel2.Size = new Size(244, 426);
             panel2.TabIndex = 0;
             // 
+            // pictureBox5
+            // 
+            pictureBox5.BackgroundImage = (Image)resources.GetObject("pictureBox5.BackgroundImage");
+            pictureBox5.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox5.Location = new Point(188, 289);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(35, 35);
+            pictureBox5.TabIndex = 18;
+            pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.BackgroundImage = (Image)resources.GetObject("pictureBox4.BackgroundImage");
+            pictureBox4.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox4.Location = new Point(107, 289);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(35, 35);
+            pictureBox4.TabIndex = 17;
+            pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
+            pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox3.Location = new Point(25, 289);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(35, 35);
+            pictureBox3.TabIndex = 14;
+            pictureBox3.TabStop = false;
+            // 
             // button1
             // 
             button1.Cursor = Cursors.Hand;
-            button1.Location = new Point(414, 32);
+            button1.Location = new Point(405, 29);
             button1.Name = "button1";
-            button1.Size = new Size(91, 23);
+            button1.Size = new Size(100, 27);
             button1.TabIndex = 6;
             button1.Text = "History";
             button1.UseVisualStyleBackColor = true;
@@ -140,6 +194,7 @@
             button2.TabIndex = 6;
             button2.Text = "Add Product";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // panel3
             // 
@@ -151,57 +206,16 @@
             panel3.Size = new Size(526, 94);
             panel3.TabIndex = 1;
             // 
-            // label8
+            // button3
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Arial Rounded MT Bold", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.ForeColor = Color.DodgerBlue;
-            label8.Location = new Point(167, 6);
-            label8.Name = "label8";
-            label8.Size = new Size(183, 37);
-            label8.TabIndex = 10;
-            label8.Text = "PixelForge";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.DarkSlateGray;
-            label5.Location = new Point(153, 44);
-            label5.Name = "label5";
-            label5.Size = new Size(205, 15);
-            label5.TabIndex = 11;
-            label5.Text = "The best Gaming Shop in town.";
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
-            pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox3.Location = new Point(25, 289);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(35, 35);
-            pictureBox3.TabIndex = 14;
-            pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.BackgroundImage = (Image)resources.GetObject("pictureBox4.BackgroundImage");
-            pictureBox4.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox4.Location = new Point(107, 289);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(35, 35);
-            pictureBox4.TabIndex = 17;
-            pictureBox4.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            pictureBox5.BackgroundImage = (Image)resources.GetObject("pictureBox5.BackgroundImage");
-            pictureBox5.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox5.Location = new Point(188, 289);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(35, 35);
-            pictureBox5.TabIndex = 18;
-            pictureBox5.TabStop = false;
+            button3.FlatStyle = FlatStyle.System;
+            button3.Location = new Point(144, 383);
+            button3.Name = "button3";
+            button3.Size = new Size(75, 23);
+            button3.TabIndex = 19;
+            button3.Text = "Back";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // manage
             // 
@@ -218,10 +232,10 @@
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
-            panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            panel3.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -241,5 +255,6 @@
         private PictureBox pictureBox3;
         private PictureBox pictureBox4;
         private PictureBox pictureBox5;
+        private Button button3;
     }
 }

@@ -41,6 +41,20 @@ namespace Project
             hist.Show();
             this.Hide();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            add addprod = new add();
+            addprod.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Dashboard dash = new Dashboard(firstName, lastName);
+            dash.Show();
+            this.Hide();    
+        }
     }
 
 }
