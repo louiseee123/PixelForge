@@ -56,7 +56,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = SystemColors.InactiveCaption;
+            panel1.BackColor = SystemColors.ControlLight;
             panel1.BorderStyle = BorderStyle.Fixed3D;
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
@@ -86,6 +86,7 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.ForeColor = Color.Black;
             label3.Location = new Point(145, 350);
             label3.Name = "label3";
             label3.Size = new Size(131, 15);
@@ -117,6 +118,7 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.ForeColor = Color.Black;
             label2.Location = new Point(221, 239);
             label2.Name = "label2";
             label2.Size = new Size(57, 15);
@@ -126,7 +128,8 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.ForeColor = Color.FromArgb(64, 64, 64);
+            label1.BackColor = Color.Transparent;
+            label1.ForeColor = Color.Black;
             label1.Location = new Point(221, 191);
             label1.Name = "label1";
             label1.Size = new Size(60, 15);
@@ -137,7 +140,7 @@
             // 
             login.BackColor = SystemColors.Control;
             login.Cursor = Cursors.Hand;
-            login.ForeColor = Color.FromArgb(64, 64, 64);
+            login.ForeColor = Color.Black;
             login.Location = new Point(208, 303);
             login.Name = "login";
             login.Size = new Size(88, 31);
@@ -157,7 +160,7 @@
             // 
             // panel2
             // 
-            panel2.BackColor = SystemColors.MenuBar;
+            panel2.BackColor = SystemColors.ActiveBorder;
             panel2.BorderStyle = BorderStyle.Fixed3D;
             panel2.Controls.Add(pictureBox4);
             panel2.Controls.Add(pictureBox5);
@@ -174,6 +177,7 @@
             // 
             pictureBox4.BackgroundImage = (Image)resources.GetObject("pictureBox4.BackgroundImage");
             pictureBox4.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox4.BorderStyle = BorderStyle.Fixed3D;
             pictureBox4.Location = new Point(117, 330);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(35, 35);
@@ -184,6 +188,7 @@
             // 
             pictureBox5.BackgroundImage = (Image)resources.GetObject("pictureBox5.BackgroundImage");
             pictureBox5.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox5.BorderStyle = BorderStyle.Fixed3D;
             pictureBox5.Location = new Point(175, 330);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(35, 35);
@@ -194,6 +199,7 @@
             // 
             pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
             pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox3.BorderStyle = BorderStyle.Fixed3D;
             pictureBox3.Location = new Point(63, 330);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(35, 35);
@@ -204,7 +210,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.DarkSlateGray;
+            label5.ForeColor = Color.Black;
             label5.Location = new Point(34, 218);
             label5.Name = "label5";
             label5.Size = new Size(205, 15);
@@ -240,9 +246,11 @@
             ClientSize = new Size(800, 450);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "LoginForm";
+            Text = "Login";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);

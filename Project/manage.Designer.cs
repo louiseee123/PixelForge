@@ -37,13 +37,15 @@
             label1 = new Label();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
+            button3 = new Button();
             pictureBox5 = new PictureBox();
             pictureBox4 = new PictureBox();
             pictureBox3 = new PictureBox();
             button1 = new Button();
             button2 = new Button();
             panel3 = new Panel();
-            button3 = new Button();
+            panel4 = new Panel();
+            label3 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -51,11 +53,12 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panel3.SuspendLayout();
+            panel4.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.BackColor = SystemColors.ControlLight;
+            panel1.BackColor = SystemColors.ControlLightLight;
             panel1.BorderStyle = BorderStyle.Fixed3D;
             panel1.Controls.Add(label5);
             panel1.Controls.Add(label8);
@@ -92,7 +95,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(116, 141);
+            label2.Location = new Point(112, 182);
             label2.Name = "label2";
             label2.Size = new Size(286, 15);
             label2.TabIndex = 6;
@@ -132,9 +135,10 @@
             // 
             // panel2
             // 
-            panel2.BackColor = SystemColors.InactiveCaption;
+            panel2.BackColor = SystemColors.ActiveBorder;
             panel2.BorderStyle = BorderStyle.Fixed3D;
             panel2.Controls.Add(button3);
+            panel2.Controls.Add(label3);
             panel2.Controls.Add(pictureBox5);
             panel2.Controls.Add(pictureBox4);
             panel2.Controls.Add(pictureBox3);
@@ -143,68 +147,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(244, 426);
             panel2.TabIndex = 0;
-            // 
-            // pictureBox5
-            // 
-            pictureBox5.BackgroundImage = (Image)resources.GetObject("pictureBox5.BackgroundImage");
-            pictureBox5.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox5.Location = new Point(188, 289);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(35, 35);
-            pictureBox5.TabIndex = 18;
-            pictureBox5.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.BackgroundImage = (Image)resources.GetObject("pictureBox4.BackgroundImage");
-            pictureBox4.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox4.Location = new Point(107, 289);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(35, 35);
-            pictureBox4.TabIndex = 17;
-            pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
-            pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox3.Location = new Point(25, 289);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(35, 35);
-            pictureBox3.TabIndex = 14;
-            pictureBox3.TabStop = false;
-            // 
-            // button1
-            // 
-            button1.Cursor = Cursors.Hand;
-            button1.Location = new Point(405, 29);
-            button1.Name = "button1";
-            button1.Size = new Size(100, 27);
-            button1.TabIndex = 6;
-            button1.Text = "History";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
-            // button2
-            // 
-            button2.Cursor = Cursors.Hand;
-            button2.Location = new Point(18, 28);
-            button2.Name = "button2";
-            button2.Size = new Size(91, 31);
-            button2.TabIndex = 6;
-            button2.Text = "Add Product";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
-            // 
-            // panel3
-            // 
-            panel3.BorderStyle = BorderStyle.Fixed3D;
-            panel3.Controls.Add(button1);
-            panel3.Controls.Add(button2);
-            panel3.Location = new Point(12, 344);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(526, 94);
-            panel3.TabIndex = 1;
             // 
             // button3
             // 
@@ -217,25 +159,116 @@
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
+            // pictureBox5
+            // 
+            pictureBox5.BackgroundImage = (Image)resources.GetObject("pictureBox5.BackgroundImage");
+            pictureBox5.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox5.BorderStyle = BorderStyle.Fixed3D;
+            pictureBox5.Location = new Point(188, 289);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(35, 35);
+            pictureBox5.TabIndex = 18;
+            pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.BackgroundImage = (Image)resources.GetObject("pictureBox4.BackgroundImage");
+            pictureBox4.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox4.BorderStyle = BorderStyle.Fixed3D;
+            pictureBox4.Location = new Point(107, 289);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(35, 35);
+            pictureBox4.TabIndex = 17;
+            pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
+            pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox3.BorderStyle = BorderStyle.Fixed3D;
+            pictureBox3.Location = new Point(25, 289);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(35, 35);
+            pictureBox3.TabIndex = 14;
+            pictureBox3.TabStop = false;
+            // 
+            // button1
+            // 
+            button1.Cursor = Cursors.Hand;
+            button1.Location = new Point(75, 26);
+            button1.Name = "button1";
+            button1.Size = new Size(91, 31);
+            button1.TabIndex = 6;
+            button1.Text = "History";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // button2
+            // 
+            button2.Cursor = Cursors.Hand;
+            button2.Location = new Point(63, 26);
+            button2.Name = "button2";
+            button2.Size = new Size(91, 31);
+            button2.TabIndex = 6;
+            button2.Text = "Add Product";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = SystemColors.ControlLight;
+            panel3.BorderStyle = BorderStyle.Fixed3D;
+            panel3.Controls.Add(button2);
+            panel3.Location = new Point(12, 344);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(236, 94);
+            panel3.TabIndex = 1;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = SystemColors.ControlLight;
+            panel4.BorderStyle = BorderStyle.Fixed3D;
+            panel4.Controls.Add(button1);
+            panel4.Location = new Point(302, 344);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(236, 94);
+            panel4.TabIndex = 1;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Arial Rounded MT Bold", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.DodgerBlue;
+            label3.Location = new Point(34, 200);
+            label3.Name = "label3";
+            label3.Size = new Size(183, 37);
+            label3.TabIndex = 10;
+            label3.Text = "PixelForge";
+            // 
             // manage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(panel4);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "manage";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "manage";
+            Text = "Manage";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panel3.ResumeLayout(false);
+            panel4.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -256,5 +289,7 @@
         private PictureBox pictureBox4;
         private PictureBox pictureBox5;
         private Button button3;
+        private Label label3;
+        private Panel panel4;
     }
 }

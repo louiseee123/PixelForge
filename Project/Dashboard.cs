@@ -32,7 +32,7 @@ namespace Project
         private void Dashboard_Load(object sender, EventArgs e)
         {
             // Display the welcome message when the form loads
-            name.Text =firstName;
+            name.Text = firstName;
 
 
         }
@@ -203,9 +203,9 @@ namespace Project
             receipt.AppendLine("\n\n----------------------------------------------------------");
 
             MessageBox.Show(receipt.ToString(), "Transaction Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            
+
             RecordTransaction(receipt.ToString());
-           
+
             ResetTransaction();
         }
 
@@ -227,7 +227,7 @@ namespace Project
             {
                 mySqlConnection.Open();
 
-                
+
 
                 // Get the current date and time
                 DateTime transactionDateTime = DateTime.Now;
@@ -237,7 +237,7 @@ namespace Project
                 MySqlCommand mySqlCommand = new MySqlCommand(query, mySqlConnection);
 
                 // Add parameters for the query
-              
+
                 mySqlCommand.Parameters.AddWithValue("@DateTime", transactionDateTime);
                 mySqlCommand.Parameters.AddWithValue("@Receipt", receiptDetails);
 
@@ -253,6 +253,30 @@ namespace Project
             finally
             {
                 mySqlConnection.Close();
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+           
+            DialogResult result = MessageBox.Show(
+                "Are you sure you want to log out?",
+                "Logout Confirmation",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            
+            if (result == DialogResult.Yes)
+            {
+              
+                Form1 loginForm = new Form1();
+                loginForm.Show(); 
+                this.Close(); 
+            }
+            else
+            {
+               
             }
         }
     }

@@ -64,7 +64,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = SystemColors.InactiveCaption;
+            panel1.BackColor = SystemColors.ControlLight;
             panel1.Controls.Add(label7);
             panel1.Controls.Add(label6);
             panel1.Controls.Add(radioButton3);
@@ -93,7 +93,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Arial Rounded MT Bold", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.DodgerBlue;
-            label7.Location = new Point(170, 7);
+            label7.Location = new Point(171, 7);
             label7.Name = "label7";
             label7.Size = new Size(149, 37);
             label7.TabIndex = 7;
@@ -102,7 +102,8 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(131, 360);
+            label6.ForeColor = Color.Black;
+            label6.Location = new Point(138, 360);
             label6.Name = "label6";
             label6.Size = new Size(142, 15);
             label6.TabIndex = 6;
@@ -112,7 +113,8 @@
             // 
             radioButton3.AutoSize = true;
             radioButton3.Cursor = Cursors.Hand;
-            radioButton3.Location = new Point(304, 281);
+            radioButton3.ForeColor = Color.Black;
+            radioButton3.Location = new Point(307, 281);
             radioButton3.Name = "radioButton3";
             radioButton3.Size = new Size(55, 19);
             radioButton3.TabIndex = 5;
@@ -124,6 +126,7 @@
             // 
             radioButton2.AutoSize = true;
             radioButton2.Cursor = Cursors.Hand;
+            radioButton2.ForeColor = Color.Black;
             radioButton2.Location = new Point(210, 281);
             radioButton2.Name = "radioButton2";
             radioButton2.Size = new Size(63, 19);
@@ -136,6 +139,7 @@
             // 
             radioButton1.AutoSize = true;
             radioButton1.Cursor = Cursors.Hand;
+            radioButton1.ForeColor = Color.Black;
             radioButton1.Location = new Point(127, 281);
             radioButton1.Name = "radioButton1";
             radioButton1.Size = new Size(51, 19);
@@ -167,7 +171,8 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(185, 234);
+            label5.ForeColor = Color.Black;
+            label5.Location = new Point(187, 234);
             label5.Name = "label5";
             label5.Size = new Size(104, 15);
             label5.TabIndex = 2;
@@ -188,7 +193,8 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(209, 187);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(211, 187);
             label2.Name = "label2";
             label2.Size = new Size(57, 15);
             label2.TabIndex = 2;
@@ -197,7 +203,8 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(210, 140);
+            label4.ForeColor = Color.Black;
+            label4.Location = new Point(210, 142);
             label4.Name = "label4";
             label4.Size = new Size(63, 15);
             label4.TabIndex = 2;
@@ -206,6 +213,7 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.ForeColor = Color.Black;
             label3.Location = new Point(209, 96);
             label3.Name = "label3";
             label3.Size = new Size(64, 15);
@@ -224,6 +232,7 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.ForeColor = Color.Black;
             label1.Location = new Point(219, 52);
             label1.Name = "label1";
             label1.Size = new Size(36, 15);
@@ -242,7 +251,8 @@
             // register
             // 
             register.Cursor = Cursors.Hand;
-            register.Location = new Point(196, 320);
+            register.ForeColor = Color.Black;
+            register.Location = new Point(197, 320);
             register.Name = "register";
             register.Size = new Size(88, 31);
             register.TabIndex = 1;
@@ -261,7 +271,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.BackColor = SystemColors.MenuBar;
+            pictureBox1.BackColor = SystemColors.ActiveBorder;
             pictureBox1.Location = new Point(12, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(284, 426);
@@ -270,8 +280,10 @@
             // 
             // pictureBox2
             // 
+            pictureBox2.BackColor = SystemColors.ActiveBorder;
             pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
             pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox2.BorderStyle = BorderStyle.Fixed3D;
             pictureBox2.Location = new Point(81, 66);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(147, 120);
@@ -281,6 +293,7 @@
             // label8
             // 
             label8.AutoSize = true;
+            label8.BackColor = SystemColors.ActiveBorder;
             label8.Font = new Font("Arial Rounded MT Bold", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.DodgerBlue;
             label8.Location = new Point(63, 189);
@@ -292,8 +305,9 @@
             // label9
             // 
             label9.AutoSize = true;
+            label9.BackColor = SystemColors.ActiveBorder;
             label9.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.ForeColor = Color.FromArgb(64, 64, 64);
+            label9.ForeColor = Color.Black;
             label9.Location = new Point(52, 228);
             label9.Name = "label9";
             label9.Size = new Size(205, 15);
@@ -302,8 +316,10 @@
             // 
             // pictureBox3
             // 
+            pictureBox3.BackColor = SystemColors.ActiveBorder;
             pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
             pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox3.BorderStyle = BorderStyle.Fixed3D;
             pictureBox3.Location = new Point(81, 332);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(35, 35);
@@ -314,6 +330,7 @@
             // 
             pictureBox4.BackgroundImage = (Image)resources.GetObject("pictureBox4.BackgroundImage");
             pictureBox4.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox4.BorderStyle = BorderStyle.Fixed3D;
             pictureBox4.Location = new Point(138, 332);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(35, 35);
@@ -324,6 +341,7 @@
             // 
             pictureBox5.BackgroundImage = (Image)resources.GetObject("pictureBox5.BackgroundImage");
             pictureBox5.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox5.BorderStyle = BorderStyle.Fixed3D;
             pictureBox5.Location = new Point(193, 332);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(35, 35);
@@ -343,9 +361,11 @@
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Form2";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Registration Form";
+            Text = "Register";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

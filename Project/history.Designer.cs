@@ -38,6 +38,8 @@
             pictureBox3 = new PictureBox();
             button1 = new Button();
             pictureBox1 = new PictureBox();
+            label2 = new Label();
+            label3 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
@@ -49,8 +51,9 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.None;
-            panel1.BackColor = SystemColors.GradientInactiveCaption;
+            panel1.BackColor = SystemColors.ControlLight;
             panel1.BorderStyle = BorderStyle.Fixed3D;
+            panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(listBox1);
             panel1.Location = new Point(12, 12);
@@ -61,7 +64,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(168, 14);
+            label1.Location = new Point(157, 43);
             label1.Name = "label1";
             label1.Size = new Size(240, 15);
             label1.TabIndex = 5;
@@ -69,20 +72,20 @@
             // 
             // listBox1
             // 
-            listBox1.BackColor = SystemColors.InactiveBorder;
+            listBox1.BackColor = SystemColors.ControlLightLight;
             listBox1.Cursor = Cursors.Hand;
             listBox1.FormattingEnabled = true;
             listBox1.ItemHeight = 15;
-            listBox1.Location = new Point(3, 33);
+            listBox1.Location = new Point(3, 63);
             listBox1.Name = "listBox1";
-            listBox1.ScrollAlwaysVisible = true;
-            listBox1.Size = new Size(558, 379);
+            listBox1.Size = new Size(558, 349);
             listBox1.TabIndex = 0;
             // 
             // panel2
             // 
-            panel2.BackColor = SystemColors.InactiveCaption;
+            panel2.BackColor = SystemColors.ActiveBorder;
             panel2.BorderStyle = BorderStyle.Fixed3D;
+            panel2.Controls.Add(label3);
             panel2.Controls.Add(pictureBox5);
             panel2.Controls.Add(pictureBox4);
             panel2.Controls.Add(pictureBox3);
@@ -97,7 +100,8 @@
             // 
             pictureBox5.BackgroundImage = (Image)resources.GetObject("pictureBox5.BackgroundImage");
             pictureBox5.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox5.Location = new Point(86, 178);
+            pictureBox5.BorderStyle = BorderStyle.Fixed3D;
+            pictureBox5.Location = new Point(84, 209);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(35, 35);
             pictureBox5.TabIndex = 18;
@@ -107,7 +111,8 @@
             // 
             pictureBox4.BackgroundImage = (Image)resources.GetObject("pictureBox4.BackgroundImage");
             pictureBox4.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox4.Location = new Point(150, 178);
+            pictureBox4.BorderStyle = BorderStyle.Fixed3D;
+            pictureBox4.Location = new Point(145, 209);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(35, 35);
             pictureBox4.TabIndex = 17;
@@ -117,7 +122,8 @@
             // 
             pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
             pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox3.Location = new Point(18, 178);
+            pictureBox3.BorderStyle = BorderStyle.Fixed3D;
+            pictureBox3.Location = new Point(23, 209);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(35, 35);
             pictureBox3.TabIndex = 14;
@@ -146,6 +152,28 @@
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Arial Rounded MT Bold", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.DodgerBlue;
+            label2.Location = new Point(189, 4);
+            label2.Name = "label2";
+            label2.Size = new Size(183, 37);
+            label2.TabIndex = 11;
+            label2.Text = "PixelForge";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Arial Rounded MT Bold", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.DodgerBlue;
+            label3.Location = new Point(7, 145);
+            label3.Name = "label3";
+            label3.Size = new Size(183, 37);
+            label3.TabIndex = 12;
+            label3.Text = "PixelForge";
+            // 
             // history
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -153,12 +181,15 @@
             ClientSize = new Size(800, 450);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "history";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "history";
+            Text = "Transaction History";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
@@ -177,5 +208,7 @@
         private PictureBox pictureBox3;
         private PictureBox pictureBox4;
         private PictureBox pictureBox5;
+        private Label label2;
+        private Label label3;
     }
 }

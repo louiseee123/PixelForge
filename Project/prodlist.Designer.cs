@@ -40,6 +40,7 @@
             label9 = new Label();
             label8 = new Label();
             pictureBox2 = new PictureBox();
+            label2 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
@@ -50,7 +51,9 @@
             // 
             // panel1
             // 
+            panel1.BackColor = SystemColors.ControlLight;
             panel1.BorderStyle = BorderStyle.Fixed3D;
+            panel1.Controls.Add(label2);
             panel1.Controls.Add(listBoxProducts);
             panel1.Controls.Add(label1);
             panel1.Location = new Point(12, 12);
@@ -60,11 +63,12 @@
             // 
             // listBoxProducts
             // 
+            listBoxProducts.BackColor = SystemColors.ControlLightLight;
             listBoxProducts.FormattingEnabled = true;
             listBoxProducts.ItemHeight = 15;
-            listBoxProducts.Location = new Point(3, 56);
+            listBoxProducts.Location = new Point(3, 71);
             listBoxProducts.Name = "listBoxProducts";
-            listBoxProducts.Size = new Size(507, 364);
+            listBoxProducts.Size = new Size(507, 349);
             listBoxProducts.TabIndex = 11;
             // 
             // label1
@@ -80,6 +84,7 @@
             // 
             // panel2
             // 
+            panel2.BackColor = SystemColors.ActiveBorder;
             panel2.BorderStyle = BorderStyle.Fixed3D;
             panel2.Controls.Add(button1);
             panel2.Controls.Add(pictureBox4);
@@ -95,6 +100,7 @@
             // 
             // button1
             // 
+            button1.Cursor = Cursors.Hand;
             button1.Location = new Point(150, 383);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
@@ -107,6 +113,7 @@
             // 
             pictureBox4.BackgroundImage = (Image)resources.GetObject("pictureBox4.BackgroundImage");
             pictureBox4.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox4.BorderStyle = BorderStyle.Fixed3D;
             pictureBox4.Location = new Point(104, 215);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(35, 35);
@@ -117,6 +124,7 @@
             // 
             pictureBox5.BackgroundImage = (Image)resources.GetObject("pictureBox5.BackgroundImage");
             pictureBox5.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox5.BorderStyle = BorderStyle.Fixed3D;
             pictureBox5.Location = new Point(185, 215);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(35, 35);
@@ -127,6 +135,7 @@
             // 
             pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
             pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox3.BorderStyle = BorderStyle.Fixed3D;
             pictureBox3.Location = new Point(20, 215);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(35, 35);
@@ -137,7 +146,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Arial Rounded MT Bold", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.ForeColor = Color.FromArgb(64, 64, 64);
+            label9.ForeColor = Color.Black;
             label9.Location = new Point(20, 174);
             label9.Name = "label9";
             label9.Size = new Size(205, 15);
@@ -159,11 +168,21 @@
             // 
             pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
             pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox2.Location = new Point(56, 14);
+            pictureBox2.BorderStyle = BorderStyle.Fixed3D;
+            pictureBox2.Location = new Point(47, 14);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(147, 120);
             pictureBox2.TabIndex = 9;
             pictureBox2.TabStop = false;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(139, 53);
+            label2.Name = "label2";
+            label2.Size = new Size(236, 15);
+            label2.TabIndex = 12;
+            label2.Text = "Access PixelForge's available products here!";
             // 
             // prodlist
             // 
@@ -172,9 +191,11 @@
             ClientSize = new Size(800, 450);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "prodlist";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "prodlist";
+            Text = "Product List";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
@@ -199,5 +220,6 @@
         private PictureBox pictureBox4;
         private ListBox listBoxProducts;
         private Button button1;
+        private Label label2;
     }
 }

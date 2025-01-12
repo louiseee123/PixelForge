@@ -20,67 +20,85 @@ namespace Project
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string mysqlCon = "server=localhost;user=root;database=pixelforge;password=";
-            MySqlConnection mySqlConnection = new MySqlConnection(mysqlCon);
 
-            // Access the Text properties of the TextBox controls
-            string productname = prodname.Text.ToString();
-            string productcode = prodcode.Text.ToString();
-            string productprice = prodprice.Text.ToString();
-
-
-
-            if (String.IsNullOrEmpty(productname) || String.IsNullOrEmpty(productcode) ||
-               String.IsNullOrEmpty(productprice))
+            // Prompt for password using the passp form
+            using (passp passwordPrompt = new passp())
             {
-                MessageBox.Show("Please fill in all the fields.");
-                return;
-            }
-
-            try
-            {
-                // Open the connection
-                mySqlConnection.Open();
-
-                // Prepare the SQL insert query
-                string query = "INSERT INTO product (productname, productprice, productcode) VALUES (@ProductName, @ProductPrice, @ProductCode)";
-                MySqlCommand mySqlCommand = new MySqlCommand(query, mySqlConnection);
-
-                // Add parameters to the command
-                mySqlCommand.Parameters.AddWithValue("@ProductName", productname);
-                mySqlCommand.Parameters.AddWithValue("@ProductPrice", productprice);
-                mySqlCommand.Parameters.AddWithValue("@ProductCode", productcode);
-
-                // Execute the query
-                int result = mySqlCommand.ExecuteNonQuery();
-
-                if (result > 0)
+                if (passwordPrompt.ShowDialog() == DialogResult.OK)
                 {
-                    MessageBox.Show("Product successfully added!");
-                    prodname.Clear();
-                    prodcode.Clear();
-                    prodprice.Clear();
+                    if (passwordPrompt.EnteredPassword == "pixel")
+                    {
+                        // Password confirmed; proceed with adding the product
+                        string mysqlCon = "server=localhost;user=root;database=pixelforge;password=";
+                        MySqlConnection mySqlConnection = new MySqlConnection(mysqlCon);
+
+                        // Access the Text properties of the TextBox controls
+                        string productname = prodname.Text.ToString();
+                        string productcode = prodcode.Text.ToString();
+                        string productprice = prodprice.Text.ToString();
+
+                        if (String.IsNullOrEmpty(productname) || String.IsNullOrEmpty(productcode) ||
+                           String.IsNullOrEmpty(productprice))
+                        {
+                            MessageBox.Show("Please fill in all the fields.");
+                            return;
+                        }
+
+                        try
+                        {
+                            // Open the connection
+                            mySqlConnection.Open();
+
+                            // Prepare the SQL insert query
+                            string query = "INSERT INTO product (productname, productprice, productcode) VALUES (@ProductName, @ProductPrice, @ProductCode)";
+                            MySqlCommand mySqlCommand = new MySqlCommand(query, mySqlConnection);
+
+                            // Add parameters to the command
+                            mySqlCommand.Parameters.AddWithValue("@ProductName", productname);
+                            mySqlCommand.Parameters.AddWithValue("@ProductPrice", productprice);
+                            mySqlCommand.Parameters.AddWithValue("@ProductCode", productcode);
+
+                            // Execute the query
+                            int result = mySqlCommand.ExecuteNonQuery();
+
+                            if (result > 0)
+                            {
+                                MessageBox.Show("Product successfully added!");
+                                prodname.Clear();
+                                prodcode.Clear();
+                                prodprice.Clear();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Failed to register. Please try again.");
+                                prodname.Clear();
+                                prodcode.Clear();
+                                prodprice.Clear();
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            // Handle any errors
+                            MessageBox.Show("An error occurred: " + ex.Message);
+                            prodname.Clear();
+                            prodcode.Clear();
+                            prodprice.Clear();
+                        }
+                        finally
+                        {
+                            // Close the connection
+                            mySqlConnection.Close();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Incorrect password. Product was not added.");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Failed to register. Please try again.");
-                    prodname.Clear();
-                    prodcode.Clear();
-                    prodprice.Clear();
+                    MessageBox.Show("Action canceled. Product was not added.");
                 }
-            }
-            catch (Exception ex)
-            {
-                // Handle any errors
-                MessageBox.Show("An error occurred: " + ex.Message);
-                prodname.Clear();
-                prodcode.Clear();
-                prodprice.Clear();
-            }
-            finally
-            {
-                // Close the connection
-                mySqlConnection.Close();
             }
         }
 
